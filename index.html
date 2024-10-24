@@ -19,8 +19,8 @@
   <div class="d-flex vh-100 w-50 m-auto d-flex justify-content-center align-items-center flex-column">
 
     <!-- Countdown -->
-    <div id="countdown" class="fs-1 fw-bolder"> -</div>
-    <p id="instructions">Memorizza i numeri entro il tempo limite!</p>
+    <div id="countdown" class="fs-1 fw-bolder"> 0</div>
+    <p id="instructions">Memorizza i numeri entro 30 secondi!</p>
 
 
     <!-- Numbers -->
@@ -35,17 +35,20 @@
 
 
     <!-- Form -->
-    <form id="answers-form">
-      <div class="d-flex gap-5" id="input-group">
+    <form id="answers-form" class ="d-none">
+      <div class="d-flex gap-5"  id="input-group">
         <input type="number" class="form-control" min="1" max="50" id="number1" required>
         <input type="number" class="form-control" min="1" max="50" id="number2" required>
         <input type="number" class="form-control" min="1" max="50" id="number3" required>
         <input type="number" class="form-control" min="1" max="50" id="number1" required>
         <input type="number" class="form-control" min="1" max="50" id="number1" required>
       </div>
-      <button class="btn btn-primary mt-4 d-block mx-auto" id="avvia">Avvia</button>
       <p class="text-danger text-center mt-3" id="message"> ciao</p>
     </form>
+    <div class="d-flex justify-content-center gap-2">
+      <button class="btn btn-primary mt-4 d-block " id="avvia">Avvia</button>
+      <button class="btn btn-primary mt-4 d-block " id="invia" disabled>Invia </button>
+    </div>
 
   </div>
 

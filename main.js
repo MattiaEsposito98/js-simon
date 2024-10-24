@@ -1,60 +1,94 @@
 console.log("Memorizza i numeri")
 
 const playButton = document.getElementById('avvia')
+const sendButton = document.getElementById('invia')
 const countDown = document.getElementById('countdown')
-let timer
-let randomNumber1 = document.getElementById('random_num1')
-let randomNumber2 = document.getElementById('random_num2')
-let randomNumber3 = document.getElementById('random_num3')
-let randomNumber4 = document.getElementById('random_num4')
-let randomNumber5 = document.getElementById('random_num5')
-let messaggio = document.getElementById('message')
 
+let randomNumber1El = document.getElementById('random_num1') // HTMLElement
+let randomNumber2El = document.getElementById('random_num2')
+let randomNumber3El = document.getElementById('random_num3')
+let randomNumber4El = document.getElementById('random_num4')
+let randomNumber5El = document.getElementById('random_num5')
+let displayInput = document.getElementById('input-group')
+let formInput = document.getElementById ("answers-form")
+let listNumberRandom = document.getElementById('numbers-list')
+let messaggio = document.getElementById('message')
+let timer
 
 
 
 playButton.addEventListener('click', function () {
   playButton.disabled = true
+  sendButton.disabled = false
+  //document.getElementById("answers-form").style.display = 'none'
+//Num1
+const randomNum = (Math.floor(Math.random() * 50) + 1) // Number
+randomNumber1El.innerText = randomNum
+console.log(randomNumber1El)
+
+//num:2
+const randomNum2 = (Math.floor(Math.random() * 50) + 1)
+randomNumber2El.innerHTML = randomNum2
+console.log(randomNumber2El)
+
+//Num3
+const randomNum3 = (Math.floor(Math.random() * 50) + 1)
+randomNumber3El.innerHTML = randomNum3
+console.log(randomNumber3El)
+
+//Num4
+const randomNum4 = (Math.floor(Math.random() * 50) + 1)
+randomNumber4El.innerHTML = randomNum4
+console.log(randomNumber4El)
+
+//Num5
+const randomNum5 = (Math.floor(Math.random() * 50) + 1)
+randomNumber5El.innerHTML = randomNum5
+console.log(randomNumber5El)
 
   // Gestiamo il timer
-  count = 30
+  count = 5
   countDown.innerText = count
-
   // incremento il tempo
   timer = setInterval(() => {
-    if (count > 0) {
+
+    if (count> 0) {
       countDown.innerText = --count
 
-    } else
-      countDown.innerText = 0
+    } else if (count<1) {
+      formInput.classList.remove('d-none')
+      listNumberRandom.classList.add('d-none')
+    } 
+    else {
+      clearInterval(timer)
+    }
+      // 
   }, 1000)
 
-  //Numeri random
-  const randomNum = (Math.floor(Math.random() * 49) + 1)
-  randomNumber1 = randomNum
-  randomNumber1.innerText = randomNum
-  console.log(randomNumber1)
+  //  if (count === 0) {
+  //    formInput.classList.remove('d-none')
 
-  const randomNum2 = (Math.floor(Math.random() * 49) + 1)
-  randomNumber2 = randomNum2
-  randomNumber2.innerHTML = randomNum2
-  console.log(randomNumber2)
+  //  }
+})
 
-  const randomNum3 = (Math.floor(Math.random() * 49) + 1)
-  randomNumber3 = randomNum3
-  randomNumber3.innerHTML = randomNum3
-  console.log(randomNumber3)
 
-  const randomNum4 = (Math.floor(Math.random() * 49) + 1)
-  randomNumber4 = randomNum4
-  randomNumber4.innerHTML = randomNum4
-  console.log(randomNumber4)
 
-  const randomNum5 = (Math.floor(Math.random() * 49) + 1)
-  randomNumber5 = randomNum5
-  randomNumber5.innerHTML = randomNum5
-  console.log(randomNumber5)
 
+
+// 2 bottone
+sendButton.addEventListener('click', function () {
+  sendButton.disabled = true
+  playButton.disabled = false
 
 })
 
+
+
+
+
+
+// function showInput () {
+//   document.getElementById("answers-form").style.display = 'none'
+// }
+
+// setTimeout (showInput,5000) 
