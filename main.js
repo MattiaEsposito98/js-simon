@@ -16,7 +16,7 @@ let messaggio = document.getElementById('message')
 let timer
 let randomArray = []
 let userArray = []
-let finalArray = []
+let totArray = []
 
 
 
@@ -58,6 +58,7 @@ playButton.addEventListener('click', function () {
   // Gestiamo il timer
   count = 5
   countDown.innerText = count
+
   // incremento il tempo
   timer = setInterval(() => {
 
@@ -80,6 +81,7 @@ playButton.addEventListener('click', function () {
 
 // 2 bottone Invia
 sendButton.addEventListener('click', function () {
+  //checkNumber()
 
   sendButton.disabled = true
   playButton.disabled = false
@@ -92,10 +94,31 @@ sendButton.addEventListener('click', function () {
 
   userArray = [inputUser1, inputUser2, inputUser3, inputUser4, inputUser5]
   console.log(userArray)
+
+  score = 0
+
+  // ciclo per vedere se il numero e corretto
+  for (let i = 0; i < userArray.length; i++) {
+
+    if (randomArray.includes(userArray[i])) {
+      score++ 
+      totArray.push(usersNumber);
+    }
+  }
+  messaggio.innerText = `Hai indovinato ${score} numeri`
+
 })
 
-// for (let i = 0; i<randomArray.length; i++)
-//   Element = userArray[i]
-//   console.log (Element)
+
+// function checkNumber() {
+
+// }
+
+
+
+
+
+
+
 
 
