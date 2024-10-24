@@ -17,29 +17,36 @@
 
 <body>
   <div class="d-flex vh-100 w-50 m-auto d-flex justify-content-center align-items-center flex-column">
-    
+
     <!-- Countdown -->
     <div id="countdown" class="fs-1 fw-bolder"> -</div>
-    <p class= id="instructions">Memorizza i numeri entro il tempo limite!</p>
+    <p id="instructions">Memorizza i numeri entro il tempo limite!</p>
 
 
     <!-- Numbers -->
-    <ul id="numbers-list" class="d-flex gap-5 list-unstyled"></ul>
+    <ul id="numbers-list" class="d-flex gap-5 list-unstyled">
+      <li id="random_num1">-</li>
+      <li id="random_num2">-</li>
+      <li id="random_num3">-</li>
+      <li id="random_num4">-</li>
+      <li id="random_num5">-</li>
+    </ul>
+
 
 
     <!-- Form -->
-    <form id="answers-form" >
+    <form id="answers-form">
       <div class="d-flex gap-5" id="input-group">
-        <input type="number" class="form-control" min="1" max="50" required>
-        <input type="number" class="form-control" min="1" max="50" required>
-        <input type="number" class="form-control" min="1" max="50" required>
-        <input type="number" class="form-control" min="1" max="50" required>
-        <input type="number" class="form-control" min="1" max="50" required>
+        <input type="number" class="form-control" min="1" max="50" id="number1" required>
+        <input type="number" class="form-control" min="1" max="50" id="number2" required>
+        <input type="number" class="form-control" min="1" max="50" id="number3" required>
+        <input type="number" class="form-control" min="1" max="50" id="number1" required>
+        <input type="number" class="form-control" min="1" max="50" id="number1" required>
       </div>
-      <button class="btn btn-primary mt-4 d-block mx-auto" id = "playButton">Avvia</button>
+      <button class="btn btn-primary mt-4 d-block mx-auto" id="avvia">Avvia</button>
       <p class="text-danger text-center mt-3" id="message"> ciao</p>
     </form>
-    
+
   </div>
 
 
